@@ -7,6 +7,14 @@
       ./hardware-configuration.nix
     ];
 
+  hardware.bluetooth.enable = true;
+
+  # services.tuned.enable = true;
+  services.power-profiles-daemon.enable = true;
+  services.upower.enable = true;
+  services.thermald.enable = true;
+  # services.tlp.enable = true;
+
   nix.settings.experimental-features = ["nix-command" "flakes"];
 
   boot.loader.systemd-boot.enable = true;
