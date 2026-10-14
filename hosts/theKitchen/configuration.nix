@@ -28,7 +28,7 @@
     ];
   };
 
-
+  
 
   programs.niri.enable = true;
   programs.noctalia.enable =  true;
@@ -40,6 +40,8 @@
     alacritty
   ];
   
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [];
 
   system.stateVersion = "26.05"; # Don't Change
 
