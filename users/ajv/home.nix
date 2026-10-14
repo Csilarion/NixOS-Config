@@ -16,6 +16,16 @@ in
   home.homeDirectory = "/home/ajv";
   home.stateVersion = "26.05";
 
+  programs.firefox.enable = true;
+
+  programs.noctalia = {
+    settings = {
+      mode = "dark";
+      source = "wallpaper";
+      wallpaper_scheme = "m3-content";
+    };
+  };
+
   xdg.configFile = builtins.mapAttrs 
   (name: subpath: {
     source = create_symlink "${dotfiles}/${subpath}";

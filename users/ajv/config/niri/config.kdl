@@ -3,6 +3,12 @@
 // Check the wiki for a full description of the configuration:
 // https://niri-wm.github.io/niri/Configuration:-Introduction
 
+cursor {
+  xcursor-size 8 
+  hide-when-typing
+  hide-after-inactive-ms 500
+}
+
 // Input device configuration.
 // Find the full list of options on the wiki:
 // https://niri-wm.github.io/niri/Configuration:-Input
@@ -261,6 +267,7 @@ layout {
         // bottom 64
     }
 }
+
 
 // Add lines like this to spawn processes at startup.
 // Note that running niri as a session supports xdg-desktop-autostart,
