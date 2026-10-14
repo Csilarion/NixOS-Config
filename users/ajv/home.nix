@@ -21,7 +21,7 @@ in
   programs.noctalia = {
     settings = {
       mode = "dark";
-      source = "wallpaper";
+      source = "builtin";
       wallpaper_scheme = "m3-content";
     };
   };
