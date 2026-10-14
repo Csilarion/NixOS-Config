@@ -43,7 +43,9 @@
   ];
   
   programs.nix-ld.enable = true;
-  programs.nix-ld.libraries = with pkgs; [];
+  programs.nix-ld.libraries = with pkgs; [
+    stdenv.cc.cc.lib
+  ];
 
   system.stateVersion = "26.05"; # Don't Change
 
