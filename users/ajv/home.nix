@@ -5,7 +5,6 @@ let
   create_symlink = path: config.lib.file.mkOutOfStoreSymlink path;
 
   configs = {
-    git = "git";
     niri = "niri";
     alacritty = "alacritty";
   };
@@ -18,13 +17,29 @@ in
 
   programs.firefox.enable = true;
 
-  programs.noctalia = {
+  programs.git = {
+    enable = true;
     settings = {
-      mode = "dark";
-      source = "builtin";
-      wallpaper_scheme = "m3-content";
+      user = {
+        email = "aidan.voigt@gmail.com";
+	name = "Aidan Voigt";
+      };
+
+      credential = {
+        helper = "${pkgs.git-credential-manager}/bin/git-credential-manager";
+	credentialStore = "secretservice";
+      };
     };
   };
+
+
+  # programs.noctalia = {
+  #   settings = {
+  #     mode = "dark";
+  #     source = "builtin";
+  #     wallpaper_scheme = "m3-content";
+  #   };
+  # };
 
   xdg.configFile = builtins.mapAttrs 
   (name: subpath: {

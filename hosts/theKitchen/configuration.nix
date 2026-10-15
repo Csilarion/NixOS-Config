@@ -43,7 +43,7 @@
 
   environment.systemPackages = with pkgs; [
     wget
-    git
+    # git
     neovim 
     alacritty
   ];
