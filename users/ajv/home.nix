@@ -26,7 +26,7 @@ in
       };
 
       credential = {
-        helper = "!f() { WAYLAND_DISPLAY=\${WAYLAND_DISPLAY:-wayland-0} AVALONIA_PLATFORM=wayland ${pkgs.git-credential-manager}/bin/git-credential-manager \"$@\"; }; f";
+        helper = "${pkgs.git-credential-manager}/bin/git-credential-manager";
 	credentialStore = "secretservice";
       };
     };
