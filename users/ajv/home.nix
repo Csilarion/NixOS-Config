@@ -19,15 +19,12 @@ in
 
   programs.git = {
     enable = true;
+    package = pkgs.git.override { withLibsecret=true; };
     settings = {
+      credential.helper = "libsecret";
       user = {
         email = "aidan.voigt@gmail.com";
 	name = "Aidan Voigt";
-      };
-
-      credential = {
-        helper = "${pkgs.git-credential-manager}/bin/git-credential-manager";
-	credentialStore = "secretservice";
       };
     };
   };
