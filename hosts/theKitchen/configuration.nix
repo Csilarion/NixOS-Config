@@ -40,6 +40,7 @@
 
   programs.niri.enable = true;
   programs.noctalia.enable =  true;
+  programs.xwayland.enable = true;
 
   environment.systemPackages = with pkgs; [
     wget
