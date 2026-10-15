@@ -42,6 +42,17 @@
   programs.noctalia.enable =  true;
   programs.xwayland.enable = true;
 
+  services.greetd = {
+    enable = true;
+    settings = {
+      default_session = {
+        command = "${config.programs.niri.package}/bin/niri-session";
+        user = "ajv";
+      };
+    };
+  };
+  systemd.user.services.niri.enableDefaultPath = false;
+
   environment.systemPackages = with pkgs; [
     wget
     # git
