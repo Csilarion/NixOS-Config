@@ -46,7 +46,7 @@
     # git
     neovim 
     alacritty
-    xwayland-sattelite
+    xwayland-satellite
   ];
   
   programs.nix-ld.enable = true;
