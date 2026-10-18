@@ -9,11 +9,14 @@ let
     alacritty = "alacritty";
   };
 in
-
 {
   home.username = "ajv";
   home.homeDirectory = "/home/ajv";
   home.stateVersion = "26.05";
+
+  modules = [
+    nvf.homeManagerModules.default
+  ];
 
   programs.firefox.enable = true;
 
@@ -26,17 +29,9 @@ in
         email = "aidan.voigt@gmail.com";
 	name = "Aidan Voigt";
       };
+      init.defaultBranch = "main";
     };
   };
-
-
-  # programs.noctalia = {
-  #   settings = {
-  #     mode = "dark";
-  #     source = "builtin";
-  #     wallpaper_scheme = "m3-content";
-  #   };
-  # };
 
   xdg.configFile = builtins.mapAttrs 
   (name: subpath: {

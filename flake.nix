@@ -9,6 +9,11 @@
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nvf = {
+      url = "github:notashelf/nvf";
+      nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {self, nixpkgs, home-manager, ... }: {
