@@ -27,6 +27,11 @@
 	    useUserPackages = true;
 	    users.ajv = import ./users/ajv/home.nix;
 	    backupFileExtension = "backup";
+	    
+	    modules = [
+              nvf.homeManagerModules.default
+	    ];
+
 	  };
 	}
       ];
