@@ -16,11 +16,11 @@
     };
   };
 
-  outputs = {self, nixpkgs, home-manager, ... }: {
+  outputs = {self, nixpkgs, home-manager, nvf, ... }: {
     nixosConfigurations.theKitchen = nixpkgs.lib.nixosSystem {
       modules = [ 
         ./hosts/theKitchen/configuration.nix 
-	nfv.nixosModules.default
+	nvf.nixosModules.default
 
 	home-manager.nixosModules.home-manager {
 	  home-manager = {
