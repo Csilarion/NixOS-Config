@@ -20,7 +20,6 @@
     nixosConfigurations.theKitchen = nixpkgs.lib.nixosSystem {
       modules = [ 
         ./hosts/theKitchen/configuration.nix 
-	nvf.nixosModules.default
 
 	home-manager.nixosModules.home-manager {
 	  home-manager = {

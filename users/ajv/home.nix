@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, nvf, ... }:
 
 let
   dotfiles = "${config.home.homeDirectory}/nixos-dotfiles/users/${config.home.username}/config";
@@ -14,6 +14,9 @@ in
   home.homeDirectory = "/home/ajv";
   home.stateVersion = "26.05";
 
+  modules = [
+    nvf.homeManagerModules.default
+  ];
 
   programs.firefox.enable = true;
 
