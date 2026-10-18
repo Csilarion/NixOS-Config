@@ -12,7 +12,7 @@
 
     nvf = {
       url = "github:notashelf/nvf";
-      nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
