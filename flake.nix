@@ -20,6 +20,7 @@
     nixosConfigurations.theKitchen = nixpkgs.lib.nixosSystem {
       modules = [ 
         ./hosts/theKitchen/configuration.nix 
+	nfv.nixosModules.default
 
 	home-manager.nixosModules.home-manager {
 	  home-manager = {
@@ -27,11 +28,6 @@
 	    useUserPackages = true;
 	    users.ajv = import ./users/ajv/home.nix;
 	    backupFileExtension = "backup";
-	    
-	    modules = [
-              nvf.homeManagerModules.default
-	    ];
-
 	  };
 	}
       ];

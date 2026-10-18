@@ -14,9 +14,6 @@ in
   home.homeDirectory = "/home/ajv";
   home.stateVersion = "26.05";
 
-  modules = [
-    nvf.homeManagerModules.default
-  ];
 
   programs.firefox.enable = true;
 
