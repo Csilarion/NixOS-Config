@@ -31,15 +31,11 @@
   users.users.ajv = {
     isNormalUser = true;
     extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-    packages = with pkgs; [
-      tree
-    ];
   };
 
   
 
   programs.niri.enable = true;
-  programs.noctalia.enable =  true;
   programs.xwayland.enable = true;
 
   services.greetd = {
@@ -56,7 +52,7 @@
   environment.systemPackages = with pkgs; [
     wget
     # git
-    neovim 
+    # neovim 
     alacritty
     xwayland-satellite
   ];
