@@ -1,6 +1,7 @@
 { config, lib, pkgs, ... }:
 
 {
+  networking.hostName = "theKitchen"; 
 
   imports =
     [ 
@@ -9,21 +10,17 @@
 
   hardware.bluetooth.enable = true;
 
-  # services.tuned.enable = true;
   services.power-profiles-daemon.enable = true;
   services.upower.enable = true;
   services.thermald.enable = true;
-  # services.tlp.enable = true;
-
-  nix.settings.experimental-features = ["nix-command" "flakes"];
-  nixpkgs.config.allowUnfree = true;
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  nix.settings.experimental-features = ["nix-command" "flakes"];
+  nixpkgs.config.allowUnfree = true;
 
-  networking.hostName = "theKitchen"; 
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.networkmanager.enable = true;
 
