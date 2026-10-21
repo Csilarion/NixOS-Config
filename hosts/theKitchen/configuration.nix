@@ -7,14 +7,8 @@
     [ 
       ./hardware-configuration.nix
       ../../modules/default.nix
+      ../../modules/laptop.nix
     ];
-
-  hardware.bluetooth.enable = true;
-
-  services.power-profiles-daemon.enable = true;
-  services.upower.enable = true;
-  services.thermald.enable = true;
-
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_latest;
