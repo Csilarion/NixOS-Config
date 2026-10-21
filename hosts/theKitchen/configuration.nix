@@ -16,6 +16,7 @@
   # services.tlp.enable = true;
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
+  nixpkgs.config.allowUnfree = true;
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -48,6 +49,15 @@
     };
   };
   systemd.user.services.niri.enableDefaultPath = false;
+
+  programs.steam = {
+    enable = true;
+  };
+
+  environment.sessionVariables = {
+    # XCURSOR_THEME="Vanilla-DMZ";
+    XCURSOR_SIZE = 8;
+  };
 
   environment.systemPackages = with pkgs; [
     wget

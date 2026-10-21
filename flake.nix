@@ -1,5 +1,4 @@
 {
-
   description = "AJV's NixOS flake";
 
   inputs = {
