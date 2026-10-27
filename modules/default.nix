@@ -33,6 +33,8 @@
   environment.systemPackages = with pkgs; [
     wget
     alacritty
+    tmux
+    nvim
     xwayland-satellite
   ];
   
