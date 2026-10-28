@@ -29,12 +29,14 @@
     enable = true;
   };
 
+  programs.zsh.enable = true;
+  users.users.ajv.shell = pkgs.zsh;
+
 
   environment.systemPackages = with pkgs; [
     wget
     alacritty
     tmux
-    nvim
     xwayland-satellite
   ];
   
